@@ -59,8 +59,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="261">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -120,8 +120,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1436" />
-    <option name="height" value="1029" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -187,12 +187,12 @@
       <workItem from="1605278220333" duration="14087000" />
       <workItem from="1605307010184" duration="365000" />
       <workItem from="1605340935653" duration="6168000" />
-      <workItem from="1605351359418" duration="8219000" />
+      <workItem from="1605351359418" duration="8565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63157000" />
+    <option name="totallyTimeSpent" value="63503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,7 +207,7 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11997886" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11997886" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32992035" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015856" side_tool="true" weight="0.3287827" />
@@ -542,8 +542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="261">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
