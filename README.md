@@ -4,8 +4,11 @@
 
 > `git clone https://github.com/Drew11/toweriq-test-app.git`
 
+> `cd toweriq-test-app`
+
 > `npm install`
 
+>
 To start dev servers use commands:
 > `npm start`
 
