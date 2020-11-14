@@ -8,23 +8,23 @@ export function startLoading() {
 
 export function loadingFailure(error) {
     return {
-        type: 'ITEMS_HAS_ERRORED',
+        type: 'LOADING_FAILURE',
         payload: error
     };
 }
 
 export function usersLoadingComplete(users) {
     return {
-        type: 'LOAD_COMPLETE',
+        type: 'LOADING_COMPLETE',
         payload: users
     };
 }
 
 export const fetchUsers =  () => {
     return async dispatch => {
-        dispatch(startLoading());
+        await dispatch(startLoading());
         try {
-             const response = await axios.get(`http://localhost:5000/users`);
+             const response = await axios.get(`https://toweriq-test-app.herokuapp.com/users`);
              const users = await response.data;
              dispatch(usersLoadingComplete(users))
         }catch (err) {

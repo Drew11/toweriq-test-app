@@ -6,12 +6,12 @@ const initialState = {
 
 const rootReducer = (state = initialState, action)=>{
     switch (action.type){
-        case 'STARTING_LOADING':
+        case 'START_LOADING':
             return {
                 ...state,
                 loading: true
             };
-        case 'LOAD_COMPLETE':
+        case 'LOADING_COMPLETE':
             return {
                 ...state,
                 loading: false,
@@ -21,7 +21,7 @@ const rootReducer = (state = initialState, action)=>{
             return {
                 ...state,
                 loading: false,
-                error: action.payload.error
+                error: action.payload
             };
         default:
             return state

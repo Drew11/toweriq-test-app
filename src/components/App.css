@@ -18,22 +18,11 @@ body {
   background-color: darkslateblue;
 }
 
-main {
-  min-height: max-content;
-  flex: 1 0 auto;
-
-}
-
-.current-user {
-  display: flex;
-  justify-content: center;
-}
 h1 {
   color: #ffffff;
   margin-top: 5px;
   margin-left: 10px;
 }
-
 
 .footer {
   height: 100px;
@@ -41,3 +30,11 @@ h1 {
   flex: 0 0 auto;
 }
 
+.error {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: firebrick;
+  font-size: 24px;
+}

@@ -1,31 +1,34 @@
-import React, {useState, useEffect, } from 'react';
-import {useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from '../actions';
+import React, {useState, useEffect,} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchUsers} from '../actions';
+import Spinner from './spinner/spinner';
 import Pagination from './pagination/pagination';
-import { Table , Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Main from "./main/main";
 
-const App = ()=>{
+const App = () => {
 
-  const users = useSelector(state=>state.users);
-  const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentUser, setCurrentUser] = useState(null);
-  const usersPerPage = 5;
-  const usersOnPage = users&&users.slice(currentPage*usersPerPage - usersPerPage, currentPage*usersPerPage)
-          .map(user=>{
-              return <tr
-                  className="user-item"
-                  key={user.id}
-              >
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>{user.surname}</td>
-              </tr>
-          });
+    const users = useSelector(state => state.users);
+    const loading = useSelector(state => state.loading);
+    const error = useSelector(state => state.error);
+    const dispatch = useDispatch();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [currentUser, setCurrentUser] = useState(null);
+    const usersPerPage = 5;
+    const usersOnPage = users && users.slice(currentPage * usersPerPage - usersPerPage, currentPage * usersPerPage)
+        .map(user => {
+            return <tr
+                className="user-item"
+                key={user.id}
+            >
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.surname}</td>
+            </tr>
+        });
 
-  const setTimer = () => {
+    const setTimer = () => {
         let i = 1;
         const interval = setInterval(() => {
                 setCurrentUser(users[i]);
@@ -33,60 +36,41 @@ const App = ()=>{
                 i = i % users.length
             }, 8000
         );
-       return () => clearInterval(interval);
+        return () => clearInterval(interval);
     };
 
     useEffect(() => {
         dispatch(fetchUsers());
-    },[dispatch]);
+    }, [dispatch]);
 
     useEffect(() => {
-        users&&setTimer();
-        users&&setCurrentUser(users[0]);
-    },[users]);
+        users && setTimer();
+        users && setCurrentUser(users[0]);
+    }, [users]);
 
-  return (
-    <div className="App">
-      <header className="header">
-          <h1>Test task</h1>
-      </header>
-      <main>
-          <Table  striped bordered hover variant="dark" className="user-list">
-              <thead>
-              <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-              </tr>
-              </thead>
-              <tbody>
-              {usersOnPage}
-              </tbody>
-          </Table>
-          <div className="current-user">
-              <Card
-                  bg="dark"
-                  text= 'white'
-                  style={{ width: '18rem' }}
-                  className="mb-2"
-              >
-                  <Card.Body>
-                      {currentUser&&currentUser.name}
-                  </Card.Body>
-              </Card>
-          </div>
+    const main = !loading && users ? <Main
+        usersOnPage={usersOnPage}
+        currentUser={currentUser}
+    /> : null;
+    const errorView = !loading && error ? <div className="error">{`Error: ${error}`}</div>: null;
+    const spinner = loading ? <Spinner/> : null;
 
-      </main>
-
-        <Pagination
-            pages={Math.ceil(users&&users.length / usersPerPage)}
-            setCurrentPage={setCurrentPage}
-        />
-
-        <footer className="footer">
-        </footer>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="header">
+                <h1>Test task</h1>
+            </header>
+            {main}
+            {errorView}
+            {spinner}
+            <Pagination
+                pages={Math.ceil(users && users.length / usersPerPage)}
+                setCurrentPage={setCurrentPage}
+            />
+            <footer className="footer">
+            </footer>
+        </div>
+    );
 };
 
 export default App;
