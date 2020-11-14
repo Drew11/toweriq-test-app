@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
-    res.set('Access-Control-Allow-Origin', `http://localhost:3000`);
+    res.set('Access-Control-Allow-Origin', `https://drew11.github.io/toweriq-test-app/`);
     res.header("Content-Type",'application/json');
     next();
 });
