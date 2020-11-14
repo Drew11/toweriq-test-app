@@ -1,5 +1,6 @@
 {
   "name": "toweriq-test-app",
+  "homepage": "https://drew11.github.io/toweriq-test-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
